@@ -1,3 +1,3 @@
 const messsage = "hello node";
 
-console.log(messsage)
+console.log(messsage);
