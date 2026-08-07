@@ -15,5 +15,8 @@
     "eslint": "^10.8.0",
     "globals": "^17.9.0",
     "nodemon": "^3.1.14"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
   }
 }
