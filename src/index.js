@@ -39,16 +39,19 @@ app.get('/', (req, res) => {
   res.status(200).json({ message: 'Hello world!' });
 });
 
-app.get('/health/:userId', (req, res) => {
-  const { userId } = req.params;
-  res.status(200).json({
-    status: 'Ok!',
-    id: userId
-  });
+// Кореневий маршрут
+app.get('/notes', (req, res) => {
+  console.log(req.body);
+  res.status(200).json({ message: 'Retrieved all notes' });
+});
+
+app.get('/notes/:noteId', (req, res) => {
+  const { noteId } = req.params;
+  res.status(200).json({"message": `Retrieved note with ID: ${noteId}`});
 });
 
 // Маршрут для тестування middleware помилки
-app.get('/error-test', (req, res) => {
+app.get('/test-error', (req, res) => {
   throw new Error('something went wrong');
 });
 
