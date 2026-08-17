@@ -2,7 +2,7 @@
 
 import { model, Schema } from 'mongoose';
 
-const studentSchema = new Schema(
+const noteSchema = new Schema(
   {
     name: {
       type: String,
@@ -33,4 +33,4 @@ const studentSchema = new Schema(
   },
 );
 
-export const Student = model('Student', studentSchema);
+export const Note = model('Student', noteSchema);
