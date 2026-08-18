@@ -17,7 +17,7 @@ app.use(express.json({
   limit: '100kb',
 }));
 
-app.use('/notes', notesRoutes);
+app.use(notesRoutes);
 
 app.use(notFoundHandler);
 app.use(errorHandler);

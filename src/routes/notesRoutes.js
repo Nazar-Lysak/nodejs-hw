@@ -3,10 +3,10 @@ import { createNote, deleteNote, getNoteById, getAllNotes, updateNote } from '..
 
 const notesRouter = Router();
 
-notesRouter.get(getAllNotes);
-notesRouter.post(createNote);
-notesRouter.get('/:noteId', getNoteById);
-notesRouter.patch('/:noteId', updateNote);
-notesRouter.delete('/:noteId', deleteNote);
+notesRouter.get('/notes', getAllNotes);
+notesRouter.post('/notes', createNote);
+notesRouter.get('/notes/:noteId', getNoteById);
+notesRouter.patch('/notes/:noteId', updateNote);
+notesRouter.delete('/notes/:noteId', deleteNote);
 
 export default notesRouter;
