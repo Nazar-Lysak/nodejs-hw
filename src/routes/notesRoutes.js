@@ -3,8 +3,8 @@ import { createNote, deleteNote, getNoteById, getAllNotes, updateNote } from '..
 
 const notesRouter = Router();
 
-notesRouter.get('/', getAllNotes);
-notesRouter.post('/', createNote);
+notesRouter.get(getAllNotes);
+notesRouter.post(createNote);
 notesRouter.get('/:noteId', getNoteById);
 notesRouter.patch('/:noteId', updateNote);
 notesRouter.delete('/:noteId', deleteNote);
