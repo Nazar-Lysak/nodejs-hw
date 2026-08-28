@@ -9,13 +9,14 @@ import {
 import { celebrate } from 'celebrate';
 import {
   createNoteSchema,
+  getNotesSchema,
   noteIdParamSchema,
   patchNoteSchema,
 } from '../validations/notesValidation.js';
 
 const notesRouter = Router();
 
-notesRouter.get('/notes', getAllNotes);
+notesRouter.get('/notes', celebrate(getNotesSchema), getAllNotes);
 notesRouter.post(
   '/notes',
   celebrate(createNoteSchema, { abortEarly: false }),
