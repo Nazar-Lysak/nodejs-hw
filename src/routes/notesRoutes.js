@@ -9,14 +9,14 @@ import {
 import { celebrate } from 'celebrate';
 import {
   createNoteSchema,
-  getNotesSchema,
-  noteIdParamSchema,
-  patchNoteSchema,
+  getAllNotesSchema,
+  noteIdSchema,
+  updateNoteSchema,
 } from '../validations/notesValidation.js';
 
 const notesRouter = Router();
 
-notesRouter.get('/notes', celebrate(getNotesSchema), getAllNotes);
+notesRouter.get('/notes', celebrate(getAllNotesSchema), getAllNotes);
 notesRouter.post(
   '/notes',
   celebrate(createNoteSchema, { abortEarly: false }),
@@ -24,10 +24,10 @@ notesRouter.post(
 );
 notesRouter.patch(
   '/notes/:noteId',
-  celebrate(patchNoteSchema, { abortEarly: false }),
+  celebrate(updateNoteSchema, { abortEarly: false }),
   updateNote,
 );
-notesRouter.get('/notes/:noteId', celebrate(noteIdParamSchema), getNoteById);
-notesRouter.delete('/notes/:noteId', celebrate(noteIdParamSchema), deleteNote);
+notesRouter.get('/notes/:noteId', celebrate(noteIdSchema), getNoteById);
+notesRouter.delete('/notes/:noteId', celebrate(noteIdSchema), deleteNote);
 
 export default notesRouter;
