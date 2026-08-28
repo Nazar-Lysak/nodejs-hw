@@ -37,7 +37,7 @@ export const updateNoteSchema = {
   }),
   [Segments.BODY]: Joi.object({
     title: Joi.string(),
-    content: Joi.string().min(3),
+    content: Joi.string(),
     tag: Joi.string()
       .valid(...TAGS),
   }).or('title', 'content', 'tag'),
