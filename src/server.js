@@ -8,6 +8,8 @@ import { logger } from './middleware/logger.js';
 import notesRoutes from './routes/notesRoutes.js';
 import { errors } from 'celebrate';
 
+import authRoutes from './routes/authRoutes.js';
+
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
 await connectMongoDB();
@@ -19,6 +21,7 @@ app.use(express.json({
 }));
 
 app.use(notesRoutes);
+app.use(authRoutes);  
 
 app.use(notFoundHandler);
 app.use(errors());
